@@ -14,5 +14,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('home.welcome');
 });
+Route::view('/mdms/{book?}/{chapter?}', 'mdms.index', [
+  "title" => "", "description" => "", "keywords" => "",  "prev" => "home",
+  "next" => "function", "menu" => [
+    "title" => "DuxCms说明",
+    "slug" => "home",
+    "children" => [
+      ["title" => "安装与环境", "slug" => "function"],
+      ["title" => "版权协议"],
+      [
+        "title" => "模板基础",
+        "children" => [
+          ["title" => "目录与结构说明"],
+          ["title" => "基础标签格式"],
+        ]
+      ],
+      ["title" => "安装与环境"],
+      ["title" => "安装与环境"],
+      ["title" => "安装与环境"],
+    ],
+  ]
+]);
