@@ -23,3 +23,9 @@ mix.js('resources/js/home.js', 'public/js')
   .postCss('resources/css/home.css', 'public/css', [
     //
   ]);
+
+// Webstack
+mix.js('resources/js/webstack.js', 'public/webstack.js')
+  .postCss('resources/css/webstack.css', 'public/webstack.css', [
+    //
+  ]);

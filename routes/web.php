@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-  return view('home.welcome');
+  return view('home.index');
 });
 Route::view('/mdms/{book?}/{chapter?}', 'mdms.index', [
   "title" => "", "description" => "", "keywords" => "",  "prev" => "home",
@@ -37,3 +37,7 @@ Route::view('/mdms/{book?}/{chapter?}', 'mdms.index', [
     ],
   ]
 ]);
+
+
+Route::get('/webstack/home', [\App\Http\Controllers\WebstackController::class, 'index']);
+Route::get('/webstack/about', [\App\Http\Controllers\WebstackController::class, 'about']);
